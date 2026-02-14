@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Tracking Demo with Three.js</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="eb59c81c-27cb-4e1d-9e8c-bfbe70c48cd9"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="canvas"></canvas>
+        <div id="three-canvas"></div>
+        <div id="status">Loading MediaPipe...</div>
+        
+        <!-- Side Instructions -->
+        <div id="left-instruction" class="instruction-panel">
+            <div class="instruction-title">Left Hand</div>
+            <div>👉 <strong>Touch:</strong> Change Color</div>
+            <div>🤌 <strong>Pinch:</strong> Change Shape</div>
+            <div class="sub-text">(Also rotates object)</div>
+        </div>
+
+        <div id="right-instruction" class="instruction-panel">
+            <div class="instruction-title">Right Hand</div>
+            <div>🤌 <strong>Pinch:</strong> Resize Object</div>
+            <div class="sub-text">(Also rotates object)</div>
+        </div>
+    </div>
+
+    <!-- Removed footer links -->
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- App Entry Point -->
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

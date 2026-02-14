@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#webcam {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* Mirror the webcam feed */
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1); /* Mirror the canvas to match webcam */
+    pointer-events: none;
+}
+
+#three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    z-index: 10;
+}
+
+/* Links removed */
+
+/* Side Instructions */
+.instruction-panel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px; 
+    line-height: 1.5;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.sub-text {
+    margin-top: 5px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+#left-instruction {
+    left: 20px;
+}
+
+#right-instruction {
+    right: 20px;
+    text-align: right;
+}
+
+.instruction-title {
+    font-weight: bold;
+    color: #00FFFF; /* Cyan for generic, overridden for specific hands */
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#left-instruction .instruction-title {
+    color: #00FF00; /* Green for Left Hand */
+}
+
+#right-instruction .instruction-title {
+    color: #00FFFF; /* Cyan for Right Hand */
+}
