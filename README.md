@@ -55,11 +55,10 @@ npx serve .
 ```
 ├── index.html          # Main entry point & UI
 ├── style.css           # Minimalist styling
-├── src/
-│   ├── main.js        # App orchestrator & Interaction logic
-│   ├── World.js       # Three.js 3D scene, shapes, lighting
-│   ├── HandInput.js   # MediaPipe AI implementation
-│   └── Overlayer.js   # 2D Canvas skeleton drawing
+│── main.js        # App orchestrator & Interaction logic
+│── World.js       # Three.js 3D scene, shapes, lighting
+│── HandInput.js   # MediaPipe AI implementation
+│── Overlayer.js   # 2D Canvas skeleton drawing
 └── README.md           # Documentation
 ```
 
