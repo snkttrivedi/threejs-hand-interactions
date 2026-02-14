@@ -2,8 +2,6 @@
 
 A real-time AR experience demonstrating gesture-based 3D object manipulation using MediaPipe and Three.js. Features smooth physics, shape switching, and dynamic scaling.
 
-![Three.js Hand Interactions Demo](preview.png)
-
 ## ✨ Features
 
 - **Real-Time Hand Tracking**: Detects 21 3D landmarks on each hand with high precision.
