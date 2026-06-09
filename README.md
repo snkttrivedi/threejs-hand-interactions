@@ -16,11 +16,11 @@ The experience is designed for two-hand interaction:
 
 | Hand           | Gesture      | Action                                                         |
 | -------------- | ------------ | -------------------------------------------------------------- |
-| **Right Hand** | 🤌 **Pinch** | **Resize** the object (Distance between fingers controls size) |
-| **Right Hand** | 👋 **Move**  | **Rotate** the object based on hand position                   |
-| **Left Hand**  | 🤌 **Pinch** | **Switch Shape** (Cycle: Sphere ➡️ Cube ➡️ Torus)              |
-| **Left Hand**  | 👉 **Touch** | **Change Color** (Touch the object to set a random neon color) |
-| **Left Hand**  | 👋 **Move**  | **Rotate** the object based on hand position                   |
+| **Left Hand**  | 🤌 **Pinch** | **Resize Object**                                              |
+| **Left Hand**  | 👋 **Move**  | **Rotate Object**                                              |
+| **Right Hand** | 🤌 **Pinch** | **Switch Shape** (Cycle: Sphere ➡️ Cube ➡️ Torus)              |
+| **Right Hand** | 👉 **Touch** | **Change Color** (Touch the object to set a random neon color) |
+| **Right Hand** | 👋 **Move**  | **Rotate Object**                                              |
 
 ## 🚀 How to Run
 
