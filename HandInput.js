@@ -1,6 +1,3 @@
-
-// HandInput.js - Encapsulates MediaPipe Hand Tracking
-
 const HANDS_VERSION = "0.4"; 
 
 export class HandInput {
@@ -15,7 +12,13 @@ export class HandInput {
 
     async init() {
         this.updateStatus('Loading AI...');
-        
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            this.updateStatus('Error: Camera API unavailable. Use HTTPS or localhost.');
+            console.error('getUserMedia not available — page must be served over HTTPS or localhost.');
+            return;
+        }
+
         try {
             // Initialize MediaPipe Hands
             this.hands = new Hands({
