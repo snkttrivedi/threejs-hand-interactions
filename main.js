@@ -1,4 +1,3 @@
-
 import { World } from './World.js';
 import { HandInput } from './HandInput.js';
 import { Overlayer } from './Overlayer.js';
@@ -64,10 +63,10 @@ class App {
                 // RIGHT HAND: Control sphere size with thumb-index distance
                 const thumbTip = landmarks[4];
                 const indexTip = landmarks[8];
-                
+
                 // Calculate distance
                 const pinchDistance = this.calculateDistance(thumbTip, indexTip);
-                
+
                 // Map pinch distance (from original logic)
                 let targetSize = 1.0;
                 if (pinchDistance < 0.05) {
@@ -77,13 +76,13 @@ class App {
                 } else {
                     targetSize = 0.2 + (pinchDistance - 0.05) * (2.0 - 0.2) / (0.25 - 0.05);
                 }
-                
+
                 this.world.updateScale(targetSize);
 
                 // Start: Map palm position to rotation
                 // Get wrist or palm center. Using wrist (landmark 0) for stable base
                 const wrist = landmarks[0];
-                
+
                 // wrist.x and wrist.y are 0 to 1.
                 // Map 0-1 to -PI to +PI rotation range
                 // x affects y rotation (horizontal movement), y affects x rotation (vertical movement)
@@ -98,14 +97,14 @@ class App {
             } else {
                 // LEFT HAND: Change color when index finger touches sphere
                 const indexTip = landmarks[8];
-                
+
                 // LEFT HAND GESTURE: TOUCH vs PINCH
-                
+
                 // 1. Check Pinch (Shape Switch)
                 const leftThumb = landmarks[4];
                 const leftIndex = landmarks[8];
                 const leftPinchDist = this.calculateDistance(leftThumb, leftIndex);
-                
+
                 // Threshold for pinch
                 if (leftPinchDist < 0.05) {
                      const now = Date.now();
@@ -114,7 +113,7 @@ class App {
                          this.world.cycleShape();
                          this.lastShapeChangeTime = now;
                      }
-                } 
+                }
                 // 2. Check Touch (Color Switch) - Only if NOT pinching
                 else if (this.world.checkInteraction(leftIndex)) {
                      const currentTime = Date.now();
@@ -128,7 +127,7 @@ class App {
 
                 // Map Left Hand Rotation
                 const wrist = landmarks[0];
-                const rotY = (wrist.x - 0.5) * Math.PI * 4; 
+                const rotY = (wrist.x - 0.5) * Math.PI * 4;
                 const rotX = (wrist.y - 0.5) * Math.PI * 4;
                 this.world.setRotation(rotX, rotY);
             }
